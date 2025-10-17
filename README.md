@@ -28,4 +28,16 @@ For final performance evaluation, we randomly sampled 300 sentence pairs for eac
 To support our ICL experiments, we created a large example pool containing 10,000 sentence pairs for each dialect. This pool was kept entirely separate from the test set to prevent data leakage and ensure a fair evaluation.
 
 
+### Evaluation Metrics 📈
 
+We found that traditional n-gram-based metrics like BLEU and chrF++ are often unreliable for dialect translation. They tend to reward outputs that simply copy the standard Korean source text rather than generating authentic dialectal features. 
+
+To overcome these limitations and accurately measure the performance of DIA-REFINE, we introduce two novel evaluation metrics.
+
+### 1. Dialect Fidelity Score (DFS)
+
+We designed the Dialect Fidelity Score (DFS) to measure if a translation is linguistically closer to the dialect reference than the standard source. It's calculated from the log ratio of cosine similarities between sentence embeddings. A positive score indicates a successful dialect shift, while a negative score signals a failure.
+
+### 2. Target Dialect Ratio (TDR)
+
+We proposed the Target Dialect Ratio (TDR) to directly measure the model's success rate in generating the correct dialect. It is the percentage of outputs our trained classifier correctly identifies as the target dialect. A higher TDR signifies more consistent dialect generation.
