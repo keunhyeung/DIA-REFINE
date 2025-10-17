@@ -1,13 +1,12 @@
 We introduce the **DIA-REFINE** (Dialect Refinement) framework, a novel method designed to steer Large Language Models (LLMs) toward high-fidelity dialect translations. 
 
-To power our framework's feedback loop, we constructed a robust Korean dialect dataset and trained a high-performance classifier. 
-
+<img width="1504" height="761" alt="figure (1)" src="https://github.com/user-attachments/assets/e98dd212-1160-4178-b6e1-ba822b69c648" />
 
 An overview of our DIA-REFINE framework. The LLM's output is verified by an external ensemble of dialect classifiers, which provide explicit feedback to guide the model.
 
 ### Dataset & Classifier Construction 📊
 
-The core of the **DIA-REFINE** framework is a strong external dialect classifier. To build this, we constructed a specialized dataset from the public "Korean dialect data of middle-aged and elderly speakers (NIA, 2022)" corpus. This parallel corpus contains pairs of standard Korean and dialectal sentences.
+we constructed a specialized dataset from the public "Korean dialect data of middle-aged and elderly speakers (NIA, 2022)" corpus. This parallel corpus contains pairs of standard Korean and dialectal sentences.
 
 We selected the **Gyeongsang**, **Jeolla**, and **Jeju** dialects for their distinct linguistic features. The table below shows the basic statistics of the processed data used.
 
@@ -16,3 +15,17 @@ We selected the **Gyeongsang**, **Jeolla**, and **Jeju** dialects for their dist
 | Gyeongsang | 259,300 | 58.02 | 57.90 | 0.0374 |
 | Jeolla | 227,737 | 55.14 | 54.99 | 0.0399 |
 | Jeju | 36,277 | 71.18 | 70.63 | 0.1234 |
+
+From this large corpus, we created three distinct, non-overlapping sets for training, evaluation, and in-context learning to ensure experimental integrity.
+
+### Classifier Training & Evaluation Set
+To build our dialect classifier, we curated dedicated datasets for the Jeolla, Gyeongsang, and Jeju dialects. The data for each dialect was then split into a 9:1 ratio, providing 9,000 samples for training and 1,000 for evaluation.
+
+### Dialect Translation Test Set
+For final performance evaluation, we randomly sampled 300 sentence pairs for each of the three target dialects (Jeolla, Gyeongsang, and Jeju). To ensure the sentences had sufficient content for translation, we only included pairs where the sentence length was greater than 30 characters.
+
+### In-Context Learning (ICL) Example Pool
+To support our ICL experiments, we created a large example pool containing 10,000 sentence pairs for each dialect. This pool was kept entirely separate from the test set to prevent data leakage and ensure a fair evaluation.
+
+
+
