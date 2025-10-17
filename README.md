@@ -4,7 +4,7 @@ We introduce the **DIA-REFINE** (Dialect Refinement) framework, a novel method d
 
 An overview of our DIA-REFINE framework. The LLM's output is verified by an external ensemble of dialect classifiers, which provide explicit feedback to guide the model.
 
-### Dataset & Classifier Construction 📊
+### Dataset Construction 📊
 
 we constructed a specialized dataset from the public ["Korean dialect data of middle-aged and elderly speakers (NIA, 2022)"](https://www.aihub.or.kr/aihubdata/data/view.do?pageIndex=1&currMenu=&topMenu=&srchOptnCnd=OPTNCND001&searchKeyword=%EC%A4%91%EB%85%B8%EB%85%84%EC%B8%B5&srchDetailCnd=DETAILCND001&srchOrder=ORDER001&srchPagePer=20&aihubDataSe=data&dataSetSn=71517) corpus. This parallel corpus contains pairs of standard Korean and dialectal sentences.
 
