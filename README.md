@@ -26,7 +26,9 @@ For final performance evaluation, we randomly sampled 300 sentence pairs for eac
 
 ### In-Context Learning (ICL) Example Pool
 To support our ICL experiments, we created a large example pool containing 10,000 sentence pairs for each dialect. This pool was kept entirely separate from the test set to prevent data leakage and ensure a fair evaluation.
+
 ---
+
 ### Evaluation Metrics 📈
 
 We found that traditional n-gram-based metrics like BLEU and chrF++ are often unreliable for dialect translation. They tend to reward outputs that simply copy the standard Korean source text rather than generating authentic dialectal features. 
