@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*-
 
 """
-Anonymized Standalone Script for Calculating DFS and TDR Metrics
-
 Description:
 This script calculates the Dialect Fidelity Score (DFS) and Target Dialect 
 Ratio (TDR) for a given set of translations from a single CSV file.
@@ -40,9 +38,6 @@ from transformers import AutoTokenizer, AutoModel, AutoModelForSequenceClassific
 from sentence_transformers import util
 from collections import Counter
 from tqdm.auto import tqdm
-
-# (Optional) Uncomment to set GPU device ID.
-# os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 
 # ======================= USER CONFIGURATION ======================= #
 
